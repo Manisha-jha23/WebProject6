@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon Hotel</title>
+    <link rel="stylesheet" href="t.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Grand Horizon</div>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+        
+                <li><a href="#availability">Availability</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#food">Food</a></li>
+            </ul>
+            <button id="signupBtn" class="btn">Sign Up</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active-section">
+            <div class="hero">
+                <h1>Welcome to Grand Horizon Hotel</h1>
+                <p>Experience luxury and comfort like never before</p>
+                <button class="btn" id="bookNowBtn">Book Now</button>
+            </div>
+
+            <div class="about-hotel">
+                <div class="about-content">
+                    <h2>About Our Hotel</h2>
+                    <p>Grand Horizon Hotel offers unparalleled luxury in the heart of the city. With stunning views, world-class amenities, and exceptional service, we provide an unforgettable experience for all our guests.</p>
+                    <p>Our hotel features 150 elegantly appointed rooms and suites, three gourmet restaurants, a full-service spa, and state-of-the-art meeting facilities.</p>
+                </div>
+                <div class="about-image">
+                    <img src="hotelfront.jpg" alt="Hotel Lobby">
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Why Choose Us</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="Luxurious Comfort.jpg" alt="Comfort">
+                        <h3>Luxurious Comfort</h3>
+                        <p>Plush bedding, premium amenities, and spacious rooms designed for your relaxation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="PrimeLocation.jpg" alt="Location">
+                        <h3>Prime Location</h3>
+                        <p>Centrally located with easy access to major attractions and business districts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="ExquisiteDining.jpg" alt="Dining">
+                        <h3>Exquisite Dining</h3>
+                        <p>Multiple restaurants offering international cuisine prepared by award-winning chefs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="ExceptionalService.jpg" alt="Service">
+                        <h3>Exceptional Service</h3>
+                        <p>24/7 concierge service to cater to your every need during your stay.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <h2>What Our Guests Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <p>"The best hotel experience I've ever had. The staff went above and beyond to make our stay memorable."</p>
+                        <div class="guest-info">
+                            <img src="boy.jpg" alt="Guest">
+                            <span>- Michael S.</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Absolutely stunning rooms with breathtaking views. Will definitely be coming back!"</p>
+                        <div class="guest-info">
+                            <img src="girl.jpg" alt="Guest">
+                            <span>- Sarah J.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign Up Modal -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Create an Account</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="email">Email or Phone Number</label>
+                        <input type="text" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Booking Section -->
+        <section id="booking" class="section">
+            <div class="section-container">
+                <h2>Book Your Stay</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="roomType">Room Type</label>
+                        <select id="roomType" required>
+                            <option value="">Select Room Type</option>
+                            <option value="deluxe">Deluxe Room</option>
+                            <option value="executive">Executive Suite</option>
+                            <option value="presidential">Presidential Suite</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkIn">Check-in Date</label>
+                        <input type="date" id="checkIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Check-out Date</label>
+                        <input type="date" id="checkOut" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" min="1" max="4" required>
+                    </div>
+                    <button type="submit" class="btn">Check Availability</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Availability Section -->
+        <section id="availability" class="section">
+            <div class="section-container">
+                <h2>Room Availability</h2>
+                <div class="availability-container" id="availabilityResults">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms Section -->
+        <section id="rooms" class="section">
+            <div class="section-container">
+                <h2>Our Rooms</h2>
+                <div class="room-gallery">
+                    <div class="room-card">
+                        <img src="DeluxeRoom.jpg" alt="Deluxe Room">
+                        <h3>Deluxe Room</h3>
+                        <p>Spacious 350 sq.ft. room with king-size bed, work desk, and city view. Includes premium amenities and 24-hour room service.</p>
+                        <p class="price">$150/night</p>
+                        <button class="btn">View Details</button>
+                    </div>
+                    <div class="room-card">
+                        <img src="ExecutiveSuite.jpg" alt="Executive Suite">
+                        <h3>Executive Suite</h3>
+                        <p>550 sq.ft. suite with separate living area, premium bedding, and executive lounge access. Perfect for business travelers.</p>
+                        <p class="price">$250/night</p>
+                        <button class="btn">View Details</button>
+                    </div>
+                    <div class="room-card">
+                        <img src="PresidentialSuite.jpg" alt="Presidential Suite">
+                        <h3>Presidential Suite</h3>
+                        <p>1200 sq.ft. of luxury with panoramic views, dining area, butler service, and exclusive amenities.</p>
+                        <p class="price">$500/night</p>
+                        <button class="btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="section">
+            <div class="section-container">
+                <h2>Our Location</h2>
+                <div class="location-content">
+                    <div class="location-info">
+                        <h3>Grand Horizon Hotel</h3>
+                        <p>123 Luxury Avenue</p>
+                        <p>Downtown, Metropolis 10001</p>
+                        <p>Phone: +1 (555) 123-4567</p>
+                        <p>Email: info@grandhorizon.com</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.9878449245334!3d40.75798597138948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Section -->
+        <section id="food" class="section">
+            <div class="section-container">
+                <h2>Dining Options</h2>
+                <div class="food-tabs">
+                    <button class="tab-btn active" data-tab="breakfast">Breakfast</button>
+                    <button class="tab-btn" data-tab="lunch">Lunch</button>
+                    <button class="tab-btn" data-tab="dinner">Dinner</button>
+                </div>
+                
+                <div class="tab-content active" id="breakfast">
+                    <div class="menu-category">
+                        <h3>Main Dishes</h3>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Continental Breakfast</h4>
+                                <p>Assorted pastries, fresh fruits, juices, coffee</p>
+                            </div>
+                            <span class="price">$15</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>American Breakfast</h4>
+                                <p>Eggs, bacon, toast, pancakes, coffee</p>
+                            </div>
+                            <span class="price">$20</span>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3>Healthy Options</h3>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Avocado Toast</h4>
+                                <p>Sourdough bread, smashed avocado, poached eggs</p>
+                            </div>
+                            <span class="price">$14</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="lunch">
+                    <div class="menu-category">
+                        <h3>Sandwiches</h3>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Club Sandwich</h4>
+                                <p>Turkey, bacon, avocado, with fries</p>
+                            </div>
+                            <span class="price">$18</span>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3>Salads</h3>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Caesar Salad</h4>
+                                <p>Fresh romaine, croutons, parmesan</p>
+                            </div>
+                            <span class="price">$16</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="dinner">
+                    <div class="menu-category">
+                        <h3>Main Courses</h3>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Filet Mignon</h4>
+                                <p>8oz beef tenderloin with vegetables</p>
+                            </div>
+                            <span class="price">$35</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Grilled Salmon</h4>
+                                <p>With lemon butter sauce and asparagus</p>
+                            </div>
+                            <span class="price">$28</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Luxury Avenue</p>
+                <p>Metropolis, 10001</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Email: info@grandhorizon.com</p>
+            </div>
+            <!-- <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#food">Dining</a></li>
+                </ul>
+            </div> -->
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#">Facebook</a>
+                    
+                    <img src="facebook.jpg" alt="Facebook">
+                    <a href="#">Instagram</a>
+                    <img src="instagram.jpg" alt="Instagram">
+                    <a href="#">Twitter</a>
+                    <img src="twitter.jpg" alt="Twitter">
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Grand Horizon Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="u.js"></script>
+</body>
+</html>
