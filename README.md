@@ -1,2 +1,2 @@
-# WebProject6
+# WebProject
 WebProject Description
